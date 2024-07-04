@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count</title>
+</head>
+<body>
+    <script>
+        function getWordCount(stri) {
+            var words = stri.split(" ");
+            var wordCount = 0;
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+                var hasAlphanum = false;
+                for (var j = 0; j < word.length; j++) {
+                    var ch = word.charAt(j);
+                    if (ch.match(/[a-zA-Z0-9]/)) {
+                        hasAlphanum = true;
+                        break;
+                    }
+                }
+                if (hasAlphanum) {
+                    wordCount++;
+                }
+            }
+            return wordCount;
+        }
+
+        var response = prompt("Enter a response:");
+        document.write("<p>That response is " + getWordCount(response) + " words.</p>");
+    </script>
+</body>
+</html>
