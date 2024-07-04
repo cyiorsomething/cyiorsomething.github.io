@@ -1,26 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-  <head>
-    <title>THE BEST WEBSITE EVER!!!!!</title>
-  </head>
-  <body bgcolor="#000000" text="#FFFFFF" link="#8080F0" alink="#9090E0" vlink="#FFFFFF">
-    <h1>HI IM CYI!!!!!!!!!</h1>
-    <p>I sometime's play this cool game named minecraft (applet's are fun!)</p>
-    
-    <marquee behavior="scroll" direction="left">BTW Do you like scrolling text??</marquee>
-    
-    <p>BTW If your a nerd you may like the page for nerds in the FEATURED CONTENT section of my page!</p>
-    
-    <hr>
-    
-    <h2>Featured Content</h2>
-    <ul>
-      <li><a href="nerd_page.html">Page for nerds</a></li>
-      <li><a href="#">No</a></li>
-      <li><a href="#">No</a></li>
-    </ul>
-    
-    <h2>Btw i wish multiplayer was in minecraft, too bad the game only got to 0.0.9a last i checked LOL!!!!</h2>
-    <p>so uh hope yall have a good year for 2009!!!!!!! hope 2010 is better then this year LOL</p>
-  </body>
+	<head>
+		<title>BFDI Physics Toy</title>
+		<style>
+			body {
+				overflow: hidden;
+				background: #eee;
+			}
+			#fps {
+				position: absolute;
+				left: 10px;
+				bottom: 10px;
+				margin: 0;
+				font-family: Consolas, monospace;
+			}
+			#container {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#stage {
+				position: absolute;
+				left: 0;
+				top:  0;
+				z-index: 0;
+				background: #fff;
+				-webkit-transform-origin: top left;
+				-moz-transform-origin: top left;
+			}
+			.body {
+				position: absolute;
+				left: 0;
+				top:  0;
+			}
+			.body > img {
+				-webkit-transform-origin: top left;
+				-moz-transform-origin: top left;
+				transform-origin: top left;
+				display: block;
+				position: absolute;
+			}
+			.rect, .belt {
+				position: absolute;
+				left: 0;
+				top: 0;
+				-webkit-transform-origin: top left;
+				-moz-transform-origin: top left;
+				transform-origin: top left;
+				background: rgba(0, 0, 0, 0.5);
+			}
+			.belt {
+				border-radius: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="stage"></div>
+		</div>
+		<pre id="fps"></pre>
+
+		<!-- Physics engine (Turbulenz) -->
+		<script src="js/turbulenz/debug.js"></script>
+		<script src="js/turbulenz/vmath.js"></script>
+		<script src="js/turbulenz/boxtree.js"></script>
+		<script src="js/turbulenz/physics2ddevice.js"></script>
+
+		<!-- State serialization -->
+		<script src="js/msgpack.js"></script>
+		<script src="js/TwoWayMap.js"></script>
+		<script src="js/StateManager.js"></script>
+
+		<!-- Props -->
+		<script src="js/PropManager.js"></script>
+		<script src="js/props/SimpleProp.js"></script>
+		<script src="js/props/Belt.js"></script>
+
+		<script src="js/Animator.js"></script>
+		<script src="js/BodyBuilder.js"></script>
+		<script src="js/bfdi-physics.js"></script>
+	</body>
 </html>

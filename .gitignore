@@ -1,8 +1,1 @@
-# Basically test stuff
-test/
-test/*.html
-test/*.js
-test/*.css
-test/*.png
-test/*.jpeg
-test/*.jpg
+*.swp
