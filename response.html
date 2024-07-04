@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Count</title>
+    <title>Word Counter</title>
 </head>
 <body>
     <script>
@@ -11,16 +11,8 @@
             var words = stri.split(" ");
             var wordCount = 0;
             for (var i = 0; i < words.length; i++) {
-                var word = words[i];
-                var hasAlphanum = false;
-                for (var j = 0; j < word.length; j++) {
-                    var ch = word.charAt(j);
-                    if (ch.match(/[a-zA-Z0-9]/)) {
-                        hasAlphanum = true;
-                        break;
-                    }
-                }
-                if (hasAlphanum) {
+                var word = words[i].trim(); // Trim whitespace around the word
+                if (word !== "") { // Check if word is not empty
                     wordCount++;
                 }
             }
